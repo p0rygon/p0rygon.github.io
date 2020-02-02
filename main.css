@@ -6,7 +6,7 @@
 @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
 
 html, body{
-    min-width: 600px;
+    min-width: 300px;
     margin: 0;
     padding: 0;
     font-family: 'Noto Sans KR', sans-serif;
@@ -132,7 +132,7 @@ h2{
 }
 @media screen and (max-width: 1080px) {
     .quote{
-        font-size: 13px;
+        font-size: 16px;
     }
 }
 
