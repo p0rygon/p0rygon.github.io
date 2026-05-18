@@ -1,0 +1,665 @@
+/* ============================================================
+   Deck v4 — visual-first slides
+   POC v3 패턴: 각 슬라이드는 1414×1000 컨테이너에 cqw 스케일.
+   ============================================================ */
+
+:root {
+    --page-bg: #e6e7e9;
+    --page-ink: #1a1a1a;
+    --page-muted: #6c757d;
+
+    /* Project accents */
+    --c-lumiere: #1D9CCB;
+    --c-leaderboard: #F89E1A;
+    --c-scrim: #E94B6A;
+}
+
+* { box-sizing: border-box; }
+html, body {
+    margin: 0; padding: 0;
+    background: var(--page-bg);
+    color: var(--page-ink);
+    font-family: 'Pretendard', 'Inter', sans-serif;
+    line-height: 1.5;
+}
+
+.page {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 56px 32px 96px;
+}
+
+.page__title {
+    font-weight: 700;
+    font-size: 28px;
+    margin: 0 0 6px;
+    letter-spacing: -0.02em;
+}
+
+.page__sub {
+    color: var(--page-muted);
+    margin: 0 0 40px;
+    font-size: 14px;
+    max-width: 70ch;
+}
+
+.slide-caption {
+    font-size: 11px;
+    color: var(--page-muted);
+    margin: 24px 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+}
+
+/* ============================================================
+   Slide frame & scaling
+   ============================================================ */
+
+.slide-frame {
+    width: 100%;
+    aspect-ratio: 1414 / 1000;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.06);
+    overflow: hidden;
+    container-type: inline-size;
+    margin-bottom: 20px;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    color: #1a1a1a;
+    font-size: calc(100cqw / 1414 * 16);
+    line-height: 1.5;
+    padding: 2.6em 3em 2em;
+    display: flex;
+    flex-direction: column;
+
+    /* defaults; override by data-project on .slide-frame */
+    --accent: var(--c-leaderboard);
+    --accent-soft: rgba(248, 158, 26, 0.12);
+    --ink: #1A1A1A;
+    --ink-muted: #6c757d;
+    --rule: #d8dadd;
+}
+
+.slide-frame[data-project="lumiere"] .slide {
+    --accent: var(--c-lumiere);
+    --accent-soft: rgba(29, 156, 203, 0.12);
+}
+.slide-frame[data-project="leaderboard"] .slide {
+    --accent: var(--c-leaderboard);
+    --accent-soft: rgba(248, 158, 26, 0.12);
+}
+.slide-frame[data-project="scrim"] .slide {
+    --accent: var(--c-scrim);
+    --accent-soft: rgba(233, 75, 106, 0.12);
+}
+
+/* ============================================================
+   Meta header + title + subtitle (common chrome)
+   ============================================================ */
+
+.meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+    font-size: 0.78em;
+    color: var(--ink-muted);
+    margin-bottom: 1.2em;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.6em;
+}
+.meta__left {
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.meta__right { letter-spacing: 0.06em; }
+
+.title {
+    font-family: 'Inter', 'Pretendard', sans-serif;
+    font-weight: 600;
+    font-size: 2.1em;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.3em;
+    line-height: 1.15;
+}
+.subtitle {
+    font-size: 0.95em;
+    color: var(--ink-muted);
+    margin: 0 0 1.4em;
+    font-weight: 400;
+    max-width: 78em;
+}
+
+.caption {
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+    font-size: 0.82em;
+    color: var(--ink-muted);
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--rule);
+    padding-top: 0.7em;
+}
+.caption strong { color: var(--ink); font-weight: 600; }
+
+/* ============================================================
+   Diagram canvas
+   ============================================================ */
+
+.diagram {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+.diagram svg {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+/* ============================================================
+   Product Surface archetype — artifact-first
+   ============================================================ */
+
+.surface {
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 26em;
+    gap: 1.6em;
+    margin-bottom: 1em;
+    min-height: 0;
+}
+.surface__main {
+    border: none;
+    background: transparent;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+}
+.surface__main img {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 0 0 1px var(--rule);
+}
+.surface__main img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: contain;
+}
+.surface__notes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    min-width: 0;
+    overflow: hidden;
+}
+.surface__notes .note + hr {
+    margin: 0;
+}
+.note__label {
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+    font-size: 0.82em;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.35em;
+}
+.note__title {
+    font-family: 'Inter', 'Pretendard', sans-serif;
+    font-weight: 600;
+    font-size: 1.45em;
+    color: var(--ink);
+    margin: 0 0 0.35em;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+}
+.note__body {
+    font-size: 1.05em;
+    color: var(--ink-muted);
+    margin: 0;
+    line-height: 1.5;
+}
+.surface__notes hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 0;
+}
+
+/* ============================================================
+   #12 — Annotated leaderboard + pipeline strip (poc-v3 이관)
+   ============================================================ */
+
+.canvas12 {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+    margin-bottom: 0.8em;
+    border: 1px solid var(--rule);
+    background: #000;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.canvas12 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: top center;
+    display: block;
+}
+.canvas12 svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.anno-rect { fill: none; stroke: #F89E1A; stroke-width: 3; }
+.anno-leader { fill: none; stroke: #F89E1A; stroke-width: 1.5; }
+.anno-marker { fill: #F89E1A; }
+.anno-marker-text {
+    fill: #fff;
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    text-anchor: middle;
+    dominant-baseline: central;
+}
+
+.pipeline12 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid var(--ink);
+    margin-bottom: 0.8em;
+    flex: 0 0 auto;
+}
+.stage12 {
+    padding: 0.6em 0.7em 0.65em;
+    border-right: 1px solid var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: 0.18em;
+}
+.stage12:last-child { border-right: none; }
+.stage__num {
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+    font-size: 0.7em;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+}
+.stage__field {
+    font-family: 'Inter', 'Pretendard', sans-serif;
+    font-weight: 600;
+    font-size: 0.95em;
+    color: var(--ink);
+}
+.stage__method {
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+    font-size: 0.72em;
+    color: var(--ink-muted);
+    margin-top: 0.15em;
+}
+.stage__output {
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 0.82em;
+    color: var(--ink);
+    background: var(--accent-soft);
+    padding: 0.16em 0.5em;
+    margin-top: 0.35em;
+    align-self: flex-start;
+    border-radius: 2px;
+}
+
+/* ============================================================
+   Implementation archetype — code crop (reuses .surface)
+   ============================================================ */
+
+.code-block {
+    background: #1a1a1a;
+    color: #e6e7e9;
+    padding: 1.4em 1.6em;
+    border-radius: 4px;
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+    font-size: 0.82em;
+    line-height: 1.55;
+    overflow: hidden;
+    white-space: pre;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 0 0 1px var(--rule);
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    tab-size: 4;
+}
+.code-block__file {
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.06em;
+    margin-bottom: 1em;
+    display: block;
+    opacity: 0.95;
+}
+.tok-c { color: #7d8088; }       /* comment */
+.tok-k { color: #79bbed; }       /* keyword */
+.tok-s { color: #f3c485; }       /* string */
+.tok-f { color: #f9a85a; }       /* function name */
+.tok-t { color: #b5e29c; }       /* type / class */
+.tok-n { color: #d8c2f5; }       /* number */
+
+/* When .surface contains a code-block, drop the default img shadow */
+.surface__main .code-block { /* keep its own shadow */ }
+
+/* ============================================================
+   Project Index (목차) — #2
+   ============================================================ */
+
+.toc {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    margin-bottom: 1em;
+    min-height: 0;
+}
+.toc__item {
+    display: grid;
+    grid-template-columns: 4em 1fr auto auto;
+    gap: 1.6em;
+    align-items: center;
+    padding: 1.4em 0;
+    border-top: 1px solid var(--rule);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+.toc__item:last-child {
+    border-bottom: 1px solid var(--rule);
+}
+.toc__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 4em;
+    height: 4px;
+    background: var(--toc-color, #1A1A1A);
+}
+.toc__num {
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: var(--toc-color, #1A1A1A);
+    letter-spacing: 0.08em;
+}
+.toc__name {
+    font-family: 'Inter', 'Pretendard', sans-serif;
+    font-size: 1.85em;
+    font-weight: 700;
+    margin: 0 0 0.15em;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+}
+.toc__desc {
+    font-size: 1em;
+    color: var(--ink-muted);
+    margin: 0;
+}
+.toc__period {
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+    font-size: 0.85em;
+    color: var(--ink-muted);
+    letter-spacing: 0.04em;
+}
+.toc__pages {
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+    font-size: 0.85em;
+    color: var(--toc-color, #1A1A1A);
+    font-weight: 600;
+}
+
+/* ============================================================
+   Section Cover — 프로젝트 표지
+   ============================================================ */
+
+.cover-section {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+    align-items: center;
+    margin-bottom: 1em;
+    min-height: 0;
+    padding: 0 0.5em;
+}
+.cover-section__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.6em;
+}
+.cover-section__color {
+    width: 7em;
+    height: 6px;
+    background: var(--cover-color, #1A1A1A);
+    margin-bottom: 0.8em;
+}
+.cover-section__period {
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+    font-size: 1.05em;
+    color: var(--cover-color, #7B7B7B);
+    letter-spacing: 0.08em;
+    margin: 0;
+}
+.cover-section__name {
+    font-family: 'Inter', 'Pretendard', sans-serif;
+    font-size: 4.6em;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin: 0;
+}
+.cover-section__tagline {
+    font-size: 1.2em;
+    color: var(--ink-muted);
+    line-height: 1.5;
+    margin: 0.6em 0 0;
+    max-width: 48em;
+}
+.cover-section__right {
+    border-left: 1px solid var(--rule);
+    padding-left: 2.4em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+}
+.cover-section__next-label {
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+    font-size: 0.82em;
+    color: var(--cover-color, var(--accent));
+    letter-spacing: 0.08em;
+    margin-bottom: 0.6em;
+    display: block;
+}
+.cover-section__next ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.cover-section__next li {
+    font-size: 1em;
+    color: var(--ink);
+    padding: 0.5em 0;
+    border-bottom: 1px dashed var(--rule);
+    line-height: 1.4;
+}
+.cover-section__next li:last-child {
+    border-bottom: none;
+}
+.cover-section__next li strong {
+    font-weight: 600;
+    color: var(--cover-color, var(--accent));
+    margin-right: 0.6em;
+}
+
+/* Narrative variant — single wide column with 4-stage arc */
+.cover-section--narrative {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4em;
+    align-items: stretch;
+}
+.cover-section--narrative .cover-section__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+}
+.cover-section__narrative {
+    display: flex;
+    flex-direction: column;
+}
+.narrative-row {
+    display: grid;
+    grid-template-columns: 7.5em 1fr;
+    gap: 1.6em;
+    padding: 0.75em 0;
+    border-top: 1px dashed var(--rule);
+    align-items: baseline;
+}
+.narrative-row:last-child {
+    border-bottom: 1px dashed var(--rule);
+}
+.narrative-row__label {
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+    font-size: 0.78em;
+    letter-spacing: 0.14em;
+    color: var(--cover-color, var(--accent));
+    font-weight: 600;
+}
+.narrative-row__body {
+    font-size: 1em;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+}
+.narrative-row__body strong {
+    font-weight: 600;
+}
+
+/* ============================================================
+   #1 Cover Hero — 임팩트 표지
+   ============================================================ */
+
+.cover-hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 0.5em;
+}
+.cover-hero__eyebrow {
+    font-family: 'IBM Plex Mono', 'Pretendard', sans-serif;
+    font-size: 0.95em;
+    letter-spacing: 0.22em;
+    color: var(--ink-muted);
+    margin: 0 0 1.4em;
+    text-transform: uppercase;
+}
+.cover-hero__name {
+    font-family: 'Pretendard', 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 6.4em;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin: 0 0 0.6em;
+    color: var(--ink);
+}
+.cover-hero__title {
+    font-family: 'Inter', 'Pretendard', sans-serif;
+    font-weight: 300;
+    font-size: 3.6em;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0.15em 0 0.8em;
+    color: var(--ink);
+}
+.cover-hero__sub {
+    font-size: 1.15em;
+    color: var(--ink-muted);
+    margin: 0 0 2em;
+    max-width: 50em;
+    line-height: 1.5;
+}
+.cover-hero__accent {
+    display: flex;
+    gap: 0.6em;
+    max-width: 26em;
+}
+.cover-hero__accent span {
+    flex: 1;
+    height: 6px;
+    border-radius: 1px;
+}
+
+
+/* ============================================================
+   Print / PDF export
+   Chrome headless --print-to-pdf 사용 시 슬라이드당 1페이지
+   ============================================================ */
+@media print {
+    @page {
+        size: 1414px 1000px;
+        margin: 0;
+    }
+    html, body {
+        background: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    .page {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+    .slide-caption {
+        display: none;
+    }
+    .slide-frame {
+        width: 1414px;
+        height: 1000px;
+        aspect-ratio: auto;
+        box-shadow: none;
+        margin: 0;
+        page-break-after: always;
+        break-after: page;
+    }
+    .slide-frame:last-child {
+        page-break-after: auto;
+        break-after: auto;
+    }
+    .slide {
+        font-size: calc(1414px / 1414 * 16);
+    }
+}

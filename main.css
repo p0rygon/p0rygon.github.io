@@ -284,6 +284,41 @@ img {
     padding-left: 1.875rem;
 }
 
+/* ---------- Inline link icon ---------- */
+
+.link-icon {
+    vertical-align: -0.1em;
+    margin-right: 0.25rem;
+}
+
+/* ---------- Narrative arc rows (Problem / Impact / Solution / Outcome) ---------- */
+
+.narrative {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 1.25rem;
+    margin: 0.4rem 0;
+    align-items: baseline;
+}
+
+.narrative__label {
+    font-weight: 700;
+    color: var(--color-text);
+    white-space: nowrap;
+}
+
+.narrative__body {
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .narrative {
+        grid-template-columns: 1fr;
+        gap: 0.1rem;
+        margin: 0.6rem 0;
+    }
+}
+
 /* ---------- Plain bullet list (Education, Experience, Contact) ---------- */
 
 .plain-list {
@@ -313,4 +348,162 @@ img {
     66%  { top: 24px; opacity: 0; }
     90%  { top: 8px;  opacity: 0; }
     100% { top: 8px;  opacity: 1; }
+}
+
+/* ---------- Print / Resume PDF ----------
+   Chrome headless --print-to-pdf 사용 시 A4 portrait CV 형태로 출력
+   ---------------------------------------------------------- */
+
+@media print {
+    @page {
+        size: A4;
+        margin: 16mm 14mm;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    html, body {
+        background: #fff;
+        margin: 0;
+        padding: 0;
+        font-size: 10pt;
+        line-height: 1.5;
+        color: var(--color-text);
+    }
+
+    /* Hero → compact CV name header */
+    .hero {
+        position: static;
+        height: auto;
+        background: none !important;
+        color: var(--color-text);
+        padding: 0 0 0.6rem;
+        margin: 0 0 0.8rem;
+        border-bottom: 2px solid var(--color-accent);
+        overflow: visible;
+    }
+    .hero__title {
+        position: static;
+        font-size: 26pt;
+        line-height: 1.1;
+        margin: 0;
+        font-weight: 700;
+    }
+    .hero__title br {
+        display: none;
+    }
+    .hero__title-prefix {
+        font-size: 26pt;
+        line-height: 1.1;
+    }
+    .hero__title-prefix::after {
+        content: " ";
+    }
+    .hero__subtitle {
+        position: static;
+        width: auto;
+        font-size: 10pt;
+        line-height: 1.4;
+        margin: 0.35rem 0 0;
+        color: var(--color-muted);
+        font-weight: 400;
+    }
+    .scroll-indicator,
+    .screen-only {
+        display: none !important;
+    }
+
+    /* Content area */
+    .content {
+        box-sizing: border-box;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .content section + section {
+        margin-top: 0.8rem;
+    }
+
+    section {
+        page-break-inside: auto;
+    }
+
+    .section-heading {
+        font-size: 12pt;
+        margin: 0.8rem 0 0.4rem;
+        padding-bottom: 0.05em;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* Lead paragraphs */
+    .lead {
+        font-size: 10pt;
+        line-height: 1.5;
+        margin: 0 0 0.3rem;
+    }
+    .lead--emphasis {
+        font-size: 11.5pt;
+        line-height: 1.35;
+        margin-top: 0.3rem;
+    }
+
+    /* Entry blocks — allow split across pages, protect smaller units */
+    .entry {
+        margin-top: 0.5rem;
+        padding-left: 0.7rem;
+        border-left: 3px solid var(--color-rule);
+        page-break-inside: auto;
+        font-size: 10pt;
+        orphans: 3;
+        widows: 3;
+    }
+    .entry > p {
+        margin: 0.15rem 0;
+    }
+    .entry__title,
+    .entry__period,
+    .entry__stack {
+        page-break-after: avoid;
+    }
+    .entry__title {
+        font-size: 11pt;
+    }
+    .entry__stack {
+        font-size: 9pt;
+    }
+    .entry__logo {
+        max-height: 28px;
+        width: auto;
+    }
+
+    /* Narrative arc — keep label column narrower in print, row indivisible */
+    .narrative {
+        grid-template-columns: 5rem 1fr;
+        gap: 0.7rem;
+        margin: 0.2rem 0;
+        page-break-inside: avoid;
+    }
+
+    /* Lists */
+    .plain-list {
+        padding-left: 1.1rem;
+        margin: 0;
+    }
+    .plain-list > li {
+        margin: 0.1rem 0;
+    }
+    .entry__list {
+        padding-left: 1.1rem;
+    }
+
+    /* Links: keep blue, no underline */
+    a {
+        color: var(--color-accent);
+        text-decoration: none;
+    }
 }

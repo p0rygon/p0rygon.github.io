@@ -62,56 +62,96 @@
             <ul class="plain-list">
                 <li>주식회사 메이아이 CTO <span class="entry__period">(2018.12. -)</span></li>
                 <li>서강대학교 영상대학원 미디어랩: 컴퓨터 그래픽스, 물리 현상 시뮬레이션 분야 학부 연구생 <span class="entry__period">(2018.11. - 2019.02.)</span></li>
-                <li>주식회사 바이러스네트워크 개발 팀 디렉터 <span class="entry__period">(2018.07. - 2019.07.)</span></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="section-heading">CURRENT FOCUS</h2>
+            <p>오프라인 버전의 구글 애널리틱스를 만들고 있습니다.</p>
+            <ul class="plain-list">
+                <li>오프라인 공간에서 일어나는 일을 데이터로 구조화하기</li>
+                <li>데이터를 리포트에 머물게 두지 않고 실제 업무 흐름으로 잇기</li>
+                <li>같은 인력이 더 넓은 운영 범위를 감당하게 하기</li>
+            </ul>
+            <p>기술적으로는 이런 문제를 풀고 있습니다.</p>
+            <ul class="plain-list">
+                <li>알고리즘 최적화·모델 양자화로 AI 추론 비용 절감하기</li>
+                <li>MLOps Lifecycle을 고도화하여 Data Drift를 탐지하고 정확도 유지하기</li>
             </ul>
         </section>
 
         <section>
             <h2 class="section-heading">PERSONAL PROJECTS</h2>
+            <p class="screen-only"><a href="projects/deck.pdf" target="_blank" rel="noopener"><svg class="link-icon" width="0.95em" height="0.95em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Project Deck (PDF, 3 projects · 24 slides)</a></p>
 
             <article class="entry">
                 <p class="entry__title"><strong>Overwatch Scrim Manager</strong></p>
                 <p class="entry__period">2025.12. -</p>
-                <p>오버워치 스크림 팀 운영을 위한 디스코드 봇 및 웹 서비스. 팀원·일정·기록을 한 곳에서 관리합니다.</p>
-                <ul class="entry__list">
-                    <li>회원 목록 조회</li>
-                    <li>스크림 일정 등록·수정·삭제</li>
-                    <li>개인 가용 시간 슬롯 등록·수정·삭제</li>
-                    <li>스크림 기록 등록·수정·삭제 (결과 스크린샷을 OCR로 자동 인식)</li>
-                    <li>운영 지표: 디스코드 서버 구성원 100여 명 중 WAU 53, MAU 71</li>
-                </ul>
+                <p class="entry__stack">FastAPI / Discord.py / AWS Bedrock (Qwen3 VL) / SQLite</p>
+                <div class="narrative">
+                    <span class="narrative__label">문제 의식</span>
+                    <p class="narrative__body">스크림 팀 운영진은 모든 팀원의 스케줄을 DM으로 수합하고, 경기가 잡힐 때마다 일일이 공지하고, 스케줄 미제출 팀원을 직접 재촉해야 했습니다. 팀원들은 본인의 활동 기록을 되짚어볼 채널이 없었습니다.</p>
+                </div>
+                <div class="narrative">
+                    <span class="narrative__label">해결 방안</span>
+                    <p class="narrative__body">스케줄 수합부터 리마인드까지 전 워크플로우를 디스코드 봇 + 웹으로 구현하고, Vision LLM OCR로 결과 스크린샷에서 경기 통계를 자동 추출해 보관합니다.</p>
+                </div>
+                <div class="narrative">
+                    <span class="narrative__label">임팩트</span>
+                    <p class="narrative__body">운영진의 반복 작업이 사라졌고, 팀원들은 자신의 실력 변화를 숫자로 체감하며 POTM(Player of the Match) 선정으로 성취감을 얻습니다.</p>
+                </div>
+                <div class="narrative">
+                    <span class="narrative__label">성과</span>
+                    <p class="narrative__body">디스코드 서버 100여 명의 구성원 중 매주 평균 53명, 매달 평균 71명이 사용하여 53%의 정착률을 기록했습니다. 매주 외부 팀과의 스크림과 내전 운영을 지원하고 있습니다.</p>
+                </div>
             </article>
 
             <article class="entry">
-                <p class="entry__title"><strong>Overwatch Leaderboard Stats Pipeline</strong></p>
+                <p class="entry__title"><strong>Overwatch Leaderboard Crawler</strong></p>
                 <p class="entry__period">2023.10. - 2026.01.</p>
-                <p class="entry__stack">AWS / Computer Vision</p>
-                <p>오버워치 경쟁전 리더보드에 노출되는 영웅 성능 지표 수집을 자동화한 워크로드. AWS에서 오버워치 클라이언트를 실행해 리더보드 이미지를 캡처하고, Computer Vision 로직으로 통계 지표로 변환했습니다.</p>
-                <ul class="entry__list">
-                    <li>지표 활용처: <a href="https://owtics.gg/en-US/ichi-rating" target="_blank" rel="noopener noreferrer">owtics.gg/ichi-rating</a></li>
-                </ul>
+                <p class="entry__stack">AWS (EC2 / S3 / Lambda) / OpenCV / EasyOCR</p>
+                <div class="narrative">
+                    <span class="narrative__label">문제 의식</span>
+                    <p class="narrative__body">오버워치는 공식 통계 API가 없어 OP.GG 같은 메타 분석 서비스가 존재하지 않았습니다. 유저들은 현재 주력 메타를 객관적 수치로 확인할 방법이 없었습니다.</p>
+                </div>
+                <div class="narrative">
+                    <span class="narrative__label">해결 방안</span>
+                    <p class="narrative__body">유일한 공개 데이터인 TOP 500 순위표를 매일 EC2에서 자동 캡처하고, 여러 가지 CV 방법론으로 5개 필드(rank·tier·name·count·heroes)로 분해해 구조화했습니다.</p>
+                </div>
+                <div class="narrative">
+                    <span class="narrative__label">임팩트</span>
+                    <p class="narrative__body">매일 갱신되는 영웅 선호도 지수가 <a href="https://owtics.gg/en-US/ichi-rating" target="_blank" rel="noopener noreferrer">owtics.gg/ichi-rating</a>에 라이브로 노출되고, 유튜버 '아이치'의 영상 소재로 활용되어 영상당 수만 회의 조회수를 기록했습니다.</p>
+                </div>
+                <div class="narrative">
+                    <span class="narrative__label">성과</span>
+                    <p class="narrative__body">27개월 동안 무중단으로 운영하며 매일 1,350장 이상의 PNG 이미지와 4,500명 이상의 플레이어 데이터를 분석했습니다. owtics.gg와 아이치 채널 두 외부 파트너에 안정적으로 데이터를 공급했습니다.</p>
+                </div>
             </article>
 
             <article class="entry entry--lumiere">
                 <p class="entry__title"><strong>Lumiere</strong></p>
                 <p class="entry__period">2017.11. - 2020.01.</p>
                 <p class="entry__stack">Python3 / Flask / Serverless / AWS Lambda + S3</p>
-                <p>Lumiere는 정시모집에서의 정보 격차를 해소하고자 만들어진 서비스입니다.</p>
-                <p>비 서울권에서는 정시모집 관련 정보에 접근하기가 어렵다고 느껴왔고, 실제로도 많은 친구들이 표준점수 합을 기준으로 작성된 종이 배치표를 보고 지원 여부를 결정하던 것을 보고 안타까움을 느꼈습니다. 이 문제를 조금이나마 해결하기 위해 전국의 모든 수험생들이 대학별 유불리와 대략적인 합격 가능성, 지원 시 필요한 여러 기초 개념에 보다 쉽게 접근할 수 있도록 인터넷에 공개된 정보에 기반하여 대학별 환산점수를 기반으로 작성된 합격 예측과 시기별로 필요한 각종 정보글의 링크를 제공했습니다.</p>
-                <ul class="entry__list">
-                    <li>대학수학능력시험 성적을 기반으로 대학 별 예상 합격률을 산정한 개인화 보고서를 생성</li>
-                    <li>정시모집 원서 접수 후 <a href="http://hijinhak.jinhak.com/SAT/J1ApplyWho/JWhoInsertBox.aspx?Sigi=J1&amp;gnb=1" target="_blank" rel="noopener noreferrer">진학사 점수공개 서비스</a>의 결과를 바탕으로 실제 등수 추정 서비스 제공</li>
-                    <li>
-                        2018학년도부터 2020학년도까지 3회에 걸쳐 서비스 운영
-                        <ul>
-                            <li>Lumiere 2020 운영 기간에는 10만여 명의 이용자가 방문하였고, 15만 장 이상의 보고서가 발행됨</li>
-                        </ul>
-                    </li>
-                </ul>
+                <div class="narrative">
+                    <span class="narrative__label">문제 의식</span>
+                    <p class="narrative__body">비서울권 수험생은 정시 의사결정을 종이 배치표와 유료 컨설팅에 의존해야 했습니다. 친구들이 표준점수 합산만 보고 정시 지원을 결정하는 모습에서 시작했습니다.</p>
+                </div>
+                <div class="narrative">
+                    <span class="narrative__label">해결 방안</span>
+                    <p class="narrative__body">엑셀 파일 형태로 공개된 '고속성장 분석기'를 가공하여 상위 누적 백분위와 합격선 데이터를 구조화하고, 수백 개의 학교별 환산 공식을 모듈로 분리해 매년 입시 규칙 변경에 대응했습니다. AWS Lambda 기반 서버리스 아키텍처로 정시 모집 기간의 트래픽 스파이크를 흡수하면서 idle 기간 비용은 0원에 수렴시켰습니다.<br><small>※ 고속성장 분석기를 만드는 코스모스핌 님에게 사용 허가를 득했습니다.</small></p>
+                </div>
+                <div class="narrative">
+                    <span class="narrative__label">임팩트</span>
+                    <p class="narrative__body">누구나 자신의 수능 점수로 합격 가능성을 30초 안에 판단할 수 있게 했습니다. 지역과 소득에 무관하게 동일한 의사결정 도구를 제공했습니다.</p>
+                </div>
+                <div class="narrative">
+                    <span class="narrative__label">성과</span>
+                    <p class="narrative__body">2018학년도부터 2020학년도까지 3년 동안 10만 명의 학생이 방문하여 15만 장의 보고서를 발행했습니다. 지역과 소득에 무관하게 제공하여 정보 격차를 해소했고, 정시모집 원서 접수 후에는 <a href="http://hijinhak.jinhak.com/SAT/J1ApplyWho/JWhoInsertBox.aspx?Sigi=J1&amp;gnb=1" target="_blank" rel="noopener noreferrer">진학사 점수공개 서비스</a> 결과를 바탕으로 실제 등수 추정 기능도 제공했습니다.</p>
+                </div>
             </article>
 
             <article class="entry entry--virus">
-                <p class="entry__title"><strong>IF2018 Business Care Generator</strong> in VIRUS NEWTORK</p>
+                <p class="entry__title"><strong>IF2018 Business Care Generator</strong> in VIRUS NETWORK</p>
                 <p class="entry__period">2018.09.</p>
                 <p class="entry__stack">Python3 / Flask</p>
                 <ul class="entry__list">

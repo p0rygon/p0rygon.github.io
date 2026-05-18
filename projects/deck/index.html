@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIN INSIK · Project Deep-Dive · v4</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css">
+    <link rel="stylesheet" href="deck.css?v=7">
+</head>
+<body>
+    <div class="page">
+        <!-- =====================================================
+             #1 Cover
+             ===================================================== -->
+        <p class="slide-caption">#1 - Cover</p>
+        <div class="slide-frame">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">DECK · 1 / 24</span>
+                    <span class="meta__right">portfolio cover</span>
+                </div>
+
+                <div class="cover-hero">
+                    <p class="cover-hero__eyebrow">SHIN INSIK · 신인식</p>
+                    <h1 class="cover-hero__name">실제 사용자가 있습니다</h1>
+                    <p class="cover-hero__sub">10만 수험생을 도운 입시 서비스부터, 27개월 동안 매일 돌아간 자동화 파이프라인까지.</p>
+                    <div class="cover-hero__accent">
+                        <span style="background:#1D9CCB"></span>
+                        <span style="background:#F89E1A"></span>
+                        <span style="background:#E94B6A"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #2 Project Index (목차)
+             ===================================================== -->
+        <p class="slide-caption">#2 - Project Index</p>
+        <div class="slide-frame">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">DECK · 2 / 24</span>
+                    <span class="meta__right">project index</span>
+                </div>
+
+                <h2 class="title">Project Index</h2>
+
+                <div class="toc">
+                    <a class="toc__item" href="#3" style="--toc-color:#1D9CCB;">
+                        <span class="toc__num">01</span>
+                        <div class="toc__main">
+                            <h3 class="toc__name">Lumiere</h3>
+                            <p class="toc__desc">대입 정시 성적 및 합격 가능성 분석 보고서</p>
+                        </div>
+                        <span class="toc__period">2017-2020</span>
+                        <span class="toc__pages">pp.3-8</span>
+                    </a>
+                    <a class="toc__item" href="#9" style="--toc-color:#F89E1A;">
+                        <span class="toc__num">02</span>
+                        <div class="toc__main">
+                            <h3 class="toc__name">Overwatch Leaderboard Crawler</h3>
+                            <p class="toc__desc">영웅 성능 데이터 수집·분석</p>
+                        </div>
+                        <span class="toc__period">2023-2026</span>
+                        <span class="toc__pages">pp.9-15</span>
+                    </a>
+                    <a class="toc__item" href="#16" style="--toc-color:#E94B6A;">
+                        <span class="toc__num">03</span>
+                        <div class="toc__main">
+                            <h3 class="toc__name">Scrim Manager</h3>
+                            <p class="toc__desc">외부 팀과의 스크림 경기와 내전 경기 운영 도구</p>
+                        </div>
+                        <span class="toc__period">2025 - 운영 중</span>
+                        <span class="toc__pages">pp.16-23</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #3 Lumiere Section Cover
+             ===================================================== -->
+        <p class="slide-caption">#3 - Lumiere</p>
+        <div class="slide-frame" data-project="lumiere">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Lumiere · 3 / 24</span>
+                    <span class="meta__right">section opener · 2017-2020</span>
+                </div>
+
+                <div class="cover-section cover-section--narrative" style="--cover-color:#1D9CCB;">
+                    <div class="cover-section__header">
+                        <div class="cover-section__color"></div>
+                        <p class="cover-section__period">2017-2020</p>
+                        <h1 class="cover-section__name">Lumiere</h1>
+                        <p class="cover-section__tagline">수능 점수를 입력하면 성적 및 합격 가능성 분석 보고서를 받아볼 수 있는 서비스</p>
+                    </div>
+                    <div class="cover-section__narrative">
+                        <div class="narrative-row">
+                            <span class="narrative-row__label">PROBLEM</span>
+                            <p class="narrative-row__body">비서울권 수험생은 정시 의사결정을 종이 배치표와 유료 컨설팅에 의존해야 했습니다. 친구들이 표준점수 합산만 보고 정시 지원을 결정하는 모습에서 시작했습니다.</p>
+                        </div>
+                        <div class="narrative-row">
+                            <span class="narrative-row__label">SOLUTION</span>
+                            <p class="narrative-row__body">엑셀 파일 형태로 공개된 '고속성장 분석기'를 가공하여 상위 누적 백분위와 합격선 데이터를 구조화하고, 수백 개의 학교별 환산 공식을 모듈로 분리해 매년 입시 규칙 변경에 대응했습니다.<br><small>※ 고속성장 분석기를 만드는 코스모스핌 님에게 사용 허가를 득했습니다.</small></p>
+                        </div>
+                        <div class="narrative-row">
+                            <span class="narrative-row__label">IMPACT</span>
+                            <p class="narrative-row__body">누구나 자신의 수능 점수로 합격 가능성을 30초 안에 판단할 수 있게 했습니다.</p>
+                        </div>
+                        <div class="narrative-row">
+                            <span class="narrative-row__label">OUTCOME</span>
+                            <p class="narrative-row__body">3년 동안 10만 명의 학생이 방문하여 15만 장의 보고서를 발행했습니다. 지역과 소득에 무관하게 제공하여 정보 격차를 해소했습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #3 Lumiere · Problem · Before/After
+             ===================================================== -->
+        <p class="slide-caption">#4 - Lumiere · Problem · Before/After</p>
+        <div class="slide-frame" data-project="lumiere">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Lumiere · 4 / 24</span>
+                    <span class="meta__right">problem · 정시 의사결정</span>
+                </div>
+
+                <h2 class="title">정시 정보에 대한 접근성을 높여 정보 격차를 해소했습니다.</h2>
+                <p class="subtitle">누구나 수능 점수로 합격 가능성을 판단할 수 있습니다. 컨설팅 비용, 긴 대기 시간, 지역별 정보 격차를 줄이는 쪽에 기획 의도를 두었습니다.</p>
+
+                <div class="diagram">
+                    <svg viewBox="0 0 1280 555" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+
+                        <!-- Before · 수동 -->
+                        <rect x="40" y="40" width="580" height="475" rx="8" fill="#fafafa" stroke="#d8dadd" stroke-width="1.5"/>
+                        <text x="64" y="78" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#7B7B7B" font-weight="500" letter-spacing="0.08em">BEFORE · 수동</text>
+                        <line x1="64" y1="92" x2="596" y2="92" stroke="#7B7B7B" stroke-width="1"/>
+
+                        <text x="64" y="166" font-family="'Inter', 'Pretendard', sans-serif" font-size="46" font-weight="700" fill="#7B7B7B">전문 컨설턴트</text>
+                        <text x="64" y="202" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="14" fill="#9b9b9b">1:1 상담 · 회당 2~3시간</text>
+
+                        <line x1="64" y1="246" x2="596" y2="246" stroke="#e0e0e0" stroke-width="1"/>
+
+                        <text x="64" y="280" font-family="'Inter', 'Pretendard', sans-serif" font-size="16" font-weight="600" fill="#7B7B7B">회당 수십만원 비용</text>
+                        <text x="64" y="310" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#9b9b9b">학생·가정 단위 의사결정에 진입장벽</text>
+
+                        <text x="64" y="354" font-family="'Inter', 'Pretendard', sans-serif" font-size="16" font-weight="600" fill="#7B7B7B">긴 대기 시간</text>
+                        <text x="64" y="384" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#9b9b9b">정시 발표 직후 6주 폭주 → 후순위 학생 배제</text>
+
+                        <text x="64" y="428" font-family="'Inter', 'Pretendard', sans-serif" font-size="16" font-weight="600" fill="#7B7B7B">지역에 따른 정보 격차</text>
+                        <text x="64" y="458" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#9b9b9b">수도권 학원가 ↔ 지방, 결과적 정보 비대칭</text>
+
+                        <!-- After · Lumiere -->
+                        <rect x="660" y="40" width="580" height="475" rx="8" fill="#fff" stroke="#1D9CCB" stroke-width="2"/>
+                        <text x="684" y="78" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#1D9CCB" font-weight="500" letter-spacing="0.08em">AFTER · Lumiere</text>
+                        <line x1="684" y1="92" x2="1216" y2="92" stroke="#1D9CCB" stroke-width="1"/>
+
+                        <text x="684" y="166" font-family="'Inter', 'Pretendard', sans-serif" font-size="46" font-weight="700" fill="#1A1A1A">온라인 30초</text>
+                        <text x="684" y="202" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="14" fill="#7B7B7B">고속성장 수능 점수 계산기 데이터에 누구나 쉽게 접근</text>
+
+                        <line x1="684" y1="246" x2="1216" y2="246" stroke="#e0e0e0" stroke-width="1"/>
+
+                        <text x="684" y="280" font-family="'Inter', 'Pretendard', sans-serif" font-size="16" font-weight="600" fill="#1A1A1A">무료 공개 · 진입장벽 없음</text>
+                        <text x="684" y="310" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">수능 성적만 입력하면 보고서</text>
+
+                        <text x="684" y="354" font-family="'Inter', 'Pretendard', sans-serif" font-size="16" font-weight="600" fill="#1A1A1A">즉시 반복 시뮬레이션</text>
+                        <text x="684" y="384" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">학교·전형 바꾸며 무제한 재출력</text>
+
+                        <text x="684" y="428" font-family="'Inter', 'Pretendard', sans-serif" font-size="16" font-weight="600" fill="#1A1A1A">3개년 누적 100,000+ 학생</text>
+                        <text x="684" y="458" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">지역·소득 무관 동일 흐름</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #4 Lumiere · Product · Product Surface
+             ===================================================== -->
+        <p class="slide-caption">#5 - Lumiere · Product · Product Surface</p>
+        <div class="slide-frame" data-project="lumiere">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Lumiere · 5 / 24</span>
+                    <span class="meta__right">product · 보고서 surface</span>
+                </div>
+
+                <h2 class="title">수능 점수만으로 PDF 보고서를 생성합니다.</h2>
+                <p class="subtitle">표준점수, 백분위, 등급과 학교별 환산공식을 결합했습니다. 학생은 첫 화면에서 전국 위치와 지원 가능성을 함께 확인합니다.</p>
+
+                <div class="surface">
+                    <div class="surface__main">
+                        <img src="assets/lumiere/report-1.png" alt="Lumiere 수능 성적 분석 보고서 1페이지">
+                    </div>
+                    <div class="surface__notes">
+                        <div class="note">
+                            <div class="note__label">surface · 1</div>
+                            <h3 class="note__title">성적 요약</h3>
+                            <p class="note__body">표준점수, 백분위, 등급, 상위누적을 한 행에 묶어 정량 판단 기준을 제공합니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">surface · 2</div>
+                            <h3 class="note__title">전국 위치</h3>
+                            <p class="note__body">표준점수 합과 백분위 합을 기준으로 전국 석차와 상위누적백분위를 계산합니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">surface · 3</div>
+                            <h3 class="note__title">응시자 기준</h3>
+                            <p class="note__body">수학 가/나형 응시자 표본을 기준으로, 학생이 자신의 계열에서 위치를 정확하게 가늠하게 했습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #9 Lumiere · Takeaway · Product Surface
+             ===================================================== -->
+        <p class="slide-caption">#6 - Lumiere · Takeaway · Product Surface</p>
+        <div class="slide-frame" data-project="lumiere">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Lumiere · 6 / 24</span>
+                    <span class="meta__right">takeaway · 의사결정 surface</span>
+                </div>
+
+                <h2 class="title">모집단위별 합격 가능성을 직관적으로 표현했습니다.</h2>
+                <p class="subtitle">표준점수, 환산점수, 모집단위 위치, 4단계 가능성을 한 보고서에 묶었습니다.</p>
+
+                <div class="surface">
+                    <div class="surface__main">
+                        <img src="assets/lumiere/report-3.png" alt="Lumiere 서울대 모집단위별 합격 가능성 추정">
+                    </div>
+                    <div class="surface__notes">
+                        <div class="note">
+                            <div class="note__label">layer · 1</div>
+                            <h3 class="note__title">모집단위 기준</h3>
+                            <p class="note__body">학교 단위가 아니라 모집단위, 모집군, 정원 단위로 추정합니다. 가군, 나군, 다군을 분리해 처리했습니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">layer · 2</div>
+                            <h3 class="note__title">점수와 상위누적백분위</h3>
+                            <p class="note__body">환산점수와 상위누적백분위를 함께 표기합니다. 한 지표만으로 판단하기 어려운 경계 케이스를 줄였습니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">layer · 3</div>
+                            <h3 class="note__title">4단계 색상</h3>
+                            <p class="note__body">최초합, 추가합, 불합격, 경계를 한 줄 막대로 표시합니다. 긴 표를 읽지 않아도 결정을 내릴 수 있게 했습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #5 Lumiere · Architecture · System Diagram
+             ===================================================== -->
+        <p class="slide-caption">#7 - Lumiere · Architecture · System Diagram</p>
+        <div class="slide-frame" data-project="lumiere">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Lumiere · 7 / 24</span>
+                    <span class="meta__right">architecture · serverless</span>
+                </div>
+
+                <h2 class="title">단일 Lambda에서 보고서 생성을 모두 처리합니다.</h2>
+                <p class="subtitle">Zappa로 패키징한 Flask 앱이 학교별 환산 모듈과 wkhtmltopdf를 호출합니다. 요청 폭증과 휴면 기간 비용을 모두 고려한 serverless 구조입니다.</p>
+
+                <div class="diagram">
+                    <svg viewBox="0 0 1280 555" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <marker id="arr5" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+                                <path d="M0,0 L10,5 L0,10 z" fill="#1A1A1A"/>
+                            </marker>
+                            <marker id="arr5d" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+                                <path d="M0,0 L10,5 L0,10 z" fill="#7B7B7B"/>
+                            </marker>
+                        </defs>
+
+                        <!-- AWS region -->
+                        <rect x="220" y="80" width="940" height="380" rx="8" fill="none" stroke="#bcbfc4" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <text x="240" y="104" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#7B7B7B" letter-spacing="0.12em">AWS · ap-northeast-2</text>
+
+                        <!-- Browser -->
+                        <rect x="40" y="220" width="140" height="80" rx="6" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="58" y="246" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#1D9CCB" font-weight="500" letter-spacing="0.08em">CLIENT</text>
+                        <text x="58" y="280" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="700" fill="#1A1A1A">Browser</text>
+
+                        <!-- API Gateway -->
+                        <rect x="260" y="220" width="200" height="80" rx="6" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="278" y="246" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#1D9CCB" font-weight="500" letter-spacing="0.08em">GATEWAY</text>
+                        <text x="278" y="280" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="700" fill="#1A1A1A">API Gateway</text>
+
+                        <!-- Lambda · Zappa -->
+                        <rect x="500" y="180" width="280" height="160" rx="6" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="520" y="208" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#1D9CCB" font-weight="500" letter-spacing="0.08em">SERVERLESS</text>
+                        <text x="520" y="248" font-family="'Inter', 'Pretendard', sans-serif" font-size="24" font-weight="700" fill="#fff">Lambda · Zappa</text>
+                        <text x="520" y="284" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="rgba(255,255,255,0.78)">Flask + wkhtmltopdf</text>
+
+                        <!-- PDF Response -->
+                        <rect x="820" y="220" width="200" height="80" rx="6" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="838" y="246" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#1D9CCB" font-weight="500" letter-spacing="0.08em">RESPONSE</text>
+                        <text x="838" y="280" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="700" fill="#1A1A1A">PDF 보고서</text>
+
+                        <!-- S3 deploy -->
+                        <rect x="500" y="380" width="280" height="60" rx="6" fill="#fdf3e7" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="520" y="406" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#1D9CCB" font-weight="500" letter-spacing="0.08em">DEPLOY ARTIFACT</text>
+                        <text x="520" y="430" font-family="'Inter', 'Pretendard', sans-serif" font-size="18" font-weight="700" fill="#1A1A1A">S3 · Zappa</text>
+
+                        <!-- Arrows -->
+                        <path d="M 180 260 L 258 260" fill="none" stroke="#1A1A1A" stroke-width="2" marker-end="url(#arr5)"/>
+                        <text x="219" y="252" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="10" fill="#1A1A1A" text-anchor="middle">HTTPS</text>
+
+                        <path d="M 460 260 L 498 260" fill="none" stroke="#1A1A1A" stroke-width="2" marker-end="url(#arr5)"/>
+                        <text x="479" y="252" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="10" fill="#1A1A1A" text-anchor="middle">invoke</text>
+
+                        <path d="M 780 260 L 818 260" fill="none" stroke="#1A1A1A" stroke-width="2" marker-end="url(#arr5)"/>
+                        <text x="799" y="252" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="10" fill="#1A1A1A" text-anchor="middle">render</text>
+
+                        <!-- S3 → Lambda deploy (dashed) -->
+                        <path d="M 640 380 L 640 340" fill="none" stroke="#7B7B7B" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr5d)"/>
+                        <text x="650" y="365" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="10" fill="#7B7B7B">deploy</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #7 Lumiere · Scale · Metric Proof
+             ===================================================== -->
+        <p class="slide-caption">#8 - Lumiere · Scale · Metric Proof</p>
+        <div class="slide-frame" data-project="lumiere">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Lumiere · 8 / 24</span>
+                    <span class="meta__right">scale · 3 seasons</span>
+                </div>
+
+                <h2 class="title">단일 Lambda로 100,000+ 학생을 처리했습니다.</h2>
+                <p class="subtitle">2017년부터 2020년까지 3개 정시 시즌 동안 운영했습니다. 정시 모집 기간 동안 피크가 반복되는 워크로드에서 유저 100,000+명과 PDF 150,000+건을 처리했습니다.</p>
+
+                <div class="diagram">
+                    <svg viewBox="0 0 1280 555" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+
+                        <!-- Tile 1 · 가입자 -->
+                        <rect x="40" y="80" width="380" height="380" rx="8" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="60" y="116" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#1D9CCB" font-weight="500" letter-spacing="0.08em">SCALE · 가입자</text>
+                        <line x1="60" y1="132" x2="400" y2="132" stroke="#1A1A1A" stroke-width="1"/>
+                        <text x="60" y="248" font-family="'Inter', 'Pretendard', sans-serif" font-size="68" font-weight="700" fill="#1A1A1A">100,000+</text>
+                        <text x="60" y="286" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="500" fill="#1A1A1A">학생 가입자</text>
+                        <line x1="60" y1="380" x2="400" y2="380" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="2,3"/>
+                        <text x="60" y="412" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">3개년 누적</text>
+                        <text x="60" y="432" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">수능 성적 발표 직후 집중 유입</text>
+
+                        <!-- Tile 2 · 보고서 -->
+                        <rect x="450" y="80" width="380" height="380" rx="8" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="470" y="116" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#1D9CCB" font-weight="500" letter-spacing="0.08em">OUTPUT · 보고서</text>
+                        <line x1="470" y1="132" x2="810" y2="132" stroke="#1A1A1A" stroke-width="1"/>
+                        <text x="470" y="248" font-family="'Inter', 'Pretendard', sans-serif" font-size="68" font-weight="700" fill="#1A1A1A">150,000+</text>
+                        <text x="470" y="286" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="500" fill="#1A1A1A">PDF 보고서 출력</text>
+                        <line x1="470" y1="380" x2="810" y2="380" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="2,3"/>
+                        <text x="470" y="412" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">학생당 평균 1.5장</text>
+                        <text x="470" y="432" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">조건 변경 → 재출력 수요</text>
+
+                        <!-- Tile 3 · 운영기간 -->
+                        <rect x="860" y="80" width="380" height="380" rx="8" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="880" y="116" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#1D9CCB" font-weight="500" letter-spacing="0.08em">RUNTIME · 시즌</text>
+                        <line x1="880" y1="132" x2="1220" y2="132" stroke="#fff" stroke-width="1"/>
+                        <text x="880" y="248" font-family="'Inter', 'Pretendard', sans-serif" font-size="68" font-weight="700" fill="#fff">3</text>
+                        <text x="880" y="286" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="500" fill="#fff">시즌 운영</text>
+                        <line x1="880" y1="380" x2="1220" y2="380" stroke="#fff" stroke-width="1" stroke-dasharray="2,3"/>
+                        <text x="880" y="412" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">2017-2020 정시 시즌</text>
+                        <text x="880" y="432" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">6주 피크 → 휴면 반복</text>
+
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #11 Overwatch Leaderboard Crawler Section Cover
+             ===================================================== -->
+        <p class="slide-caption">#9 - Overwatch Leaderboard Crawler</p>
+        <div class="slide-frame" data-project="leaderboard-pipeline">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Overwatch Leaderboard Crawler · 9 / 24</span>
+                    <span class="meta__right">section opener · 2023-2026</span>
+                </div>
+
+                <div class="cover-section cover-section--narrative" style="--cover-color:#F89E1A;">
+                    <div class="cover-section__header">
+                        <div class="cover-section__color"></div>
+                        <p class="cover-section__period">2023-2026</p>
+                        <h1 class="cover-section__name">Overwatch Leaderboard Crawler</h1>
+                        <p class="cover-section__tagline">공식 API가 없는 영웅 성능 데이터를 매일 수집하는 27개월 무중단 파이프라인.</p>
+                    </div>
+                    <div class="cover-section__narrative">
+                        <div class="narrative-row">
+                            <span class="narrative-row__label">PROBLEM</span>
+                            <p class="narrative-row__body">오버워치는 공식 통계 API가 없어 OP.GG 같은 메타 분석 서비스가 존재하지 않았습니다. 유저들은 현재 주력 메타를 객관적 수치로 확인할 방법이 없었습니다.</p>
+                        </div>
+                        <div class="narrative-row">
+                            <span class="narrative-row__label">SOLUTION</span>
+                            <p class="narrative-row__body">유일한 공개 데이터인 TOP 500 순위표를 매일 EC2에서 자동 캡처하고, 여러 가지 CV 방법론으로 5개 필드(rank·tier·name·count·heroes)로 분해해 구조화했습니다.</p>
+                        </div>
+                        <div class="narrative-row">
+                            <span class="narrative-row__label">IMPACT</span>
+                            <p class="narrative-row__body">매일 갱신되는 영웅 선호도 지수가 owtics.gg에 라이브로 노출되고, 유튜버 '아이치'의 영상 소재로 활용되어 영상당 수만 회의 조회수를 기록했습니다.</p>
+                        </div>
+                        <div class="narrative-row">
+                            <span class="narrative-row__label">OUTCOME</span>
+                            <p class="narrative-row__body">27개월 동안 무중단으로 운영하며 매일 1,350장 이상의 PNG 이미지와 4,500명 이상의 플레이어 데이터를 분석했습니다. owtics.gg와 아이치 채널 두 외부 파트너에 안정적으로 데이터를 공급했습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #10 Leaderboard · Problem · Product Surface
+             ===================================================== -->
+        <p class="slide-caption">#10 - Overwatch Leaderboard Crawler · Problem · Product Surface</p>
+        <div class="slide-frame" data-project="leaderboard">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Overwatch Leaderboard Crawler · 10 / 24</span>
+                    <span class="meta__right">problem · 공식 API 없음</span>
+                </div>
+
+                <h2 class="title">공식 API가 없는 메타 데이터를 매일 수집합니다.</h2>
+                <p class="subtitle">Blizzard는 2025년까지 영웅 통계 API를 제공하지 않았습니다. 유일한 데이터인 상위 500위 리더보드를 데이터 원천으로 삼았습니다.</p>
+
+                <div class="surface">
+                    <div class="surface__main">
+                        <img src="assets/leaderboard/leaderboard-amer-damage-p1.png" alt="Overwatch top 500 leaderboard · AMER region · DAMAGE role · page 1">
+                    </div>
+                    <div class="surface__notes">
+                        <div class="note">
+                            <div class="note__label">source · 데이터 원천</div>
+                            <h3 class="note__title">API 없음</h3>
+                            <p class="note__body">공식 API가 없어서 화면 캡처가 유일한 방법이었습니다. 클라이언트 조작을 자동화하여 리더보드에 접근했습니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">scope · 일일 분량</div>
+                            <h3 class="note__title">3개 지역, 3개 역할</h3>
+                            <p class="note__body">3개 지역, 3개 역할을 매일 같은 시각에 수집합니다. 하루 약 1,350장의 PNG 이미지와 약 4,500명 유저의 데이터가 수집됩니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">payload · 다섯 개의 필드</div>
+                            <h3 class="note__title">다섯 개의 필드</h3>
+                            <p class="note__body">Rank, tier, name, count, heroes를 인식합니다. 각 필드마다 적합한 방법론이 달랐습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #12 Leaderboard · CV Pipeline · Pipeline Frame (poc-v3 이관)
+             ===================================================== -->
+        <p class="slide-caption">#11 - Overwatch Leaderboard Crawler · CV Pipeline · Pipeline Frame</p>
+        <div class="slide-frame" data-project="leaderboard">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Overwatch Leaderboard Crawler · 11 / 24</span>
+                    <span class="meta__right">cv pipeline · multi-layer recognition</span>
+                </div>
+
+                <h2 class="title">한 행을 다섯 가지 기법으로 분해합니다.</h2>
+                <p class="subtitle">리더보드의 한 행을 5개 필드로 나누고, 각 필드에 맞는 인식 방식을 적용했습니다.</p>
+
+                <div class="canvas12">
+                    <img src="assets/leaderboard/leaderboard-amer-damage-p1.png" alt="Overwatch top 500 leaderboard with field annotations">
+                    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMin meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect class="anno-rect" x="232" y="287" width="72" height="58"/>
+                        <line class="anno-leader" x1="268" y1="287" x2="268" y2="240"/>
+                        <circle class="anno-marker" cx="268" cy="222" r="22"/>
+                        <text class="anno-marker-text" x="268" y="224">1</text>
+
+                        <rect class="anno-rect" x="320" y="287" width="92" height="58"/>
+                        <line class="anno-leader" x1="366" y1="287" x2="366" y2="240"/>
+                        <circle class="anno-marker" cx="366" cy="222" r="22"/>
+                        <text class="anno-marker-text" x="366" y="224">2</text>
+
+                        <rect class="anno-rect" x="465" y="287" width="220" height="58"/>
+                        <line class="anno-leader" x1="575" y1="287" x2="575" y2="240"/>
+                        <circle class="anno-marker" cx="575" cy="222" r="22"/>
+                        <text class="anno-marker-text" x="575" y="224">3</text>
+
+                        <rect class="anno-rect" x="945" y="287" width="240" height="58"/>
+                        <line class="anno-leader" x1="1065" y1="287" x2="1065" y2="240"/>
+                        <circle class="anno-marker" cx="1065" cy="222" r="22"/>
+                        <text class="anno-marker-text" x="1065" y="224">4</text>
+
+                        <rect class="anno-rect" x="1395" y="287" width="315" height="58"/>
+                        <line class="anno-leader" x1="1553" y1="287" x2="1553" y2="240"/>
+                        <circle class="anno-marker" cx="1553" cy="222" r="22"/>
+                        <text class="anno-marker-text" x="1553" y="224">5</text>
+                    </svg>
+                </div>
+
+                <div class="pipeline12">
+                    <div class="stage12">
+                        <span class="stage__num">① rank</span>
+                        <span class="stage__field">순위</span>
+                        <span class="stage__method">template match</span>
+                        <span class="stage__output">1</span>
+                    </div>
+                    <div class="stage12">
+                        <span class="stage__num">② tier</span>
+                        <span class="stage__field">티어 · 등급</span>
+                        <span class="stage__method">HSV hue + template</span>
+                        <span class="stage__output">CHAMPION 5</span>
+                    </div>
+                    <div class="stage12">
+                        <span class="stage__num">③ name</span>
+                        <span class="stage__field">플레이어 · 별명</span>
+                        <span class="stage__method">EasyOCR</span>
+                        <span class="stage__output">HYDRON · 말썽꾼</span>
+                    </div>
+                    <div class="stage12">
+                        <span class="stage__num">④ count</span>
+                        <span class="stage__field">경기 수</span>
+                        <span class="stage__method">EasyOCR</span>
+                        <span class="stage__output">106</span>
+                    </div>
+                    <div class="stage12">
+                        <span class="stage__num">⑤ heroes</span>
+                        <span class="stage__field">모스트 3</span>
+                        <span class="stage__method">Perceptual Hashing</span>
+                        <span class="stage__output">[reaper, cassidy, sojourn]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #14 Leaderboard · Data Path · System Diagram
+             ===================================================== -->
+        <p class="slide-caption">#12 - Overwatch Leaderboard Crawler · Data Path · System Diagram</p>
+        <div class="slide-frame" data-project="leaderboard">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Overwatch Leaderboard Crawler · 12 / 24</span>
+                    <span class="meta__right">data path · aws topology</span>
+                </div>
+
+                <h2 class="title">캡처, 변환, 보관을 AWS 안에서 자동화했습니다.</h2>
+                <p class="subtitle">EC2는 화면 캡처에 집중하고, Lambda는 분석과 데이터 리포트를 처리하며, S3는 원본 이미지를 보관합니다.</p>
+
+                <div class="diagram">
+                    <svg viewBox="0 0 1280 555" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <marker id="arr14" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+                                <path d="M0,0 L10,5 L0,10 z" fill="#1A1A1A"/>
+                            </marker>
+                            <marker id="arr14d" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+                                <path d="M0,0 L10,5 L0,10 z" fill="#7B7B7B"/>
+                            </marker>
+                        </defs>
+
+                        <!-- VPC -->
+                        <rect x="20" y="40" width="700" height="460" rx="8" fill="none" stroke="#bcbfc4" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <text x="38" y="62" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#7B7B7B" letter-spacing="0.12em">VPC · ap-northeast-2</text>
+
+                        <!-- EC2 -->
+                        <rect x="60" y="100" width="270" height="170" rx="6" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="80" y="128" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#F89E1A" font-weight="500" letter-spacing="0.08em">EC2</text>
+                        <text x="80" y="170" font-family="'Inter', 'Pretendard', sans-serif" font-size="26" font-weight="700" fill="#1A1A1A">g4dn.xlarge</text>
+                        <text x="80" y="204" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#1A1A1A">GPU · 게임 렌더링</text>
+                        <text x="80" y="228" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">pyautogui · overwatch</text>
+
+                        <!-- Lambda Reporter -->
+                        <rect x="60" y="310" width="270" height="80" rx="6" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="80" y="340" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#F89E1A" font-weight="500" letter-spacing="0.08em">LAMBDA</text>
+                        <text x="80" y="372" font-family="'Inter', 'Pretendard', sans-serif" font-size="22" font-weight="700" fill="#1A1A1A">reporter</text>
+
+                        <!-- Lambda Twitter -->
+                        <rect x="60" y="410" width="270" height="80" rx="6" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="80" y="440" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#F89E1A" font-weight="500" letter-spacing="0.08em">LAMBDA</text>
+                        <text x="80" y="472" font-family="'Inter', 'Pretendard', sans-serif" font-size="22" font-weight="700" fill="#1A1A1A">twitter</text>
+
+                        <!-- S3 cluster -->
+                        <rect x="400" y="100" width="280" height="390" rx="6" fill="#fdf3e7" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="420" y="128" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#F89E1A" font-weight="500" letter-spacing="0.08em">S3 · 4 BUCKETS</text>
+
+                        <rect x="420" y="148" width="240" height="62" rx="4" fill="#fff" stroke="#dfa56a" stroke-width="1"/>
+                        <text x="436" y="178" font-family="'Inter', 'Pretendard', sans-serif" font-size="16" font-weight="600" fill="#1A1A1A">leaderboard</text>
+                        <text x="436" y="198" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#7B7B7B">raw 캡처 원본</text>
+
+                        <rect x="420" y="222" width="240" height="62" rx="4" fill="#fff" stroke="#dfa56a" stroke-width="1"/>
+                        <text x="436" y="252" font-family="'Inter', 'Pretendard', sans-serif" font-size="16" font-weight="600" fill="#1A1A1A">hero</text>
+                        <text x="436" y="272" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#7B7B7B">Perceptual Hash → 영웅 매핑</text>
+
+                        <rect x="420" y="296" width="240" height="62" rx="4" fill="#fff" stroke="#dfa56a" stroke-width="1"/>
+                        <text x="436" y="326" font-family="'Inter', 'Pretendard', sans-serif" font-size="16" font-weight="600" fill="#1A1A1A">arcade</text>
+                        <text x="436" y="346" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#7B7B7B">아케이드 모드 캡처</text>
+
+                        <rect x="420" y="370" width="240" height="62" rx="4" fill="#fff" stroke="#dfa56a" stroke-width="1"/>
+                        <text x="436" y="400" font-family="'Inter', 'Pretendard', sans-serif" font-size="16" font-weight="600" fill="#1A1A1A">log</text>
+                        <text x="436" y="420" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#7B7B7B">운영·오류 로그</text>
+
+                        <!-- Birdwatch -->
+                        <rect x="820" y="180" width="280" height="100" rx="6" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="840" y="210" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#F89E1A" font-weight="500" letter-spacing="0.08em">BIRDWATCH API · owtics.gg</text>
+                        <text x="840" y="250" font-family="'Inter', 'Pretendard', sans-serif" font-size="22" font-weight="700" fill="#fff">POST /tierlist</text>
+
+                        <!-- Twitter external -->
+                        <rect x="820" y="395" width="280" height="80" rx="6" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="840" y="423" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#7B7B7B" letter-spacing="0.08em">EXTERNAL</text>
+                        <text x="840" y="453" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="700" fill="#1A1A1A">X / Twitter</text>
+
+                        <!-- (1) EC2 → S3 leaderboard PUT -->
+                        <path d="M 330 175 L 420 175" fill="none" stroke="#1A1A1A" stroke-width="2" marker-end="url(#arr14)"/>
+                        <text x="375" y="168" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#1A1A1A" text-anchor="middle">PUT</text>
+
+                        <!-- (2) S3 leaderboard → Lambda Reporter GET (step path) -->
+                        <path d="M 420 180 L 370 180 L 370 350 L 332 350" fill="none" stroke="#1A1A1A" stroke-width="2" marker-end="url(#arr14)"/>
+                        <text x="358" y="266" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#1A1A1A" text-anchor="middle">GET</text>
+
+                        <!-- (4) S3 arcade → Lambda Twitter GET (step path) -->
+                        <path d="M 420 326 L 388 326 L 388 440 L 332 440" fill="none" stroke="#1A1A1A" stroke-width="2" marker-end="url(#arr14)"/>
+                        <text x="367" y="386" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#1A1A1A" text-anchor="middle">GET</text>
+
+                        <!-- (5) Lambda Reporter → Birdwatch HTTPS POST (step path, routes ABOVE S3 cluster) -->
+                        <path d="M 330 320 L 345 320 L 345 80 L 940 80 L 940 178" fill="none" stroke="#1A1A1A" stroke-width="2" marker-end="url(#arr14)"/>
+                        <text x="645" y="72" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#1A1A1A">HTTPS · POST</text>
+
+                        <!-- (6) Lambda Twitter → External Twitter HTTPS POST (step path, routes BELOW S3 cluster) -->
+                        <path d="M 330 460 L 345 460 L 345 522 L 940 522 L 940 455" fill="none" stroke="#1A1A1A" stroke-width="2" marker-end="url(#arr14)"/>
+                        <text x="645" y="542" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#1A1A1A">HTTPS · POST</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #15 Leaderboard · Public Surface · Product Surface
+             ===================================================== -->
+        <p class="slide-caption">#13 - Overwatch Leaderboard Crawler · Public Surface · Product Surface</p>
+        <div class="slide-frame" data-project="leaderboard">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Overwatch Leaderboard Crawler · 13 / 24</span>
+                    <span class="meta__right">public surface · owtics ichi rating</span>
+                </div>
+
+                <h2 class="title">화면 캡처를 영웅 레이팅 시계열로 바꿉니다.</h2>
+                <p class="subtitle">owtics.gg 개발팀과 협업하여 ICHI Rating을 제공했습니다. API contract를 정의하여 데이터를 리포트하고, 메타 변화를 시계열로 제공합니다.</p>
+
+                <div class="surface">
+                    <div class="surface__main">
+                        <img src="assets/leaderboard/ichi-rating.png" alt="OWtics ICHI Rating Time Series · 영웅별 레이팅 추이">
+                    </div>
+                    <div class="surface__notes">
+                        <div class="note">
+                            <div class="note__label">consumer · owtics.gg</div>
+                            <h3 class="note__title">ICHI Rating</h3>
+                            <p class="note__body">탱, 딜, 힐 그룹별 영웅 레이팅 추이를 보여줍니다. 시즌 메타 변화를 한 줄 차트로 읽게 했습니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">data origin</div>
+                            <h3 class="note__title">데이터 리포트</h3>
+                            <p class="note__body">캡처된 이미지에서 인식된 데이터를 API contract에 맞게 가공하여 공급했습니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">contract · public</div>
+                            <h3 class="note__title">공식 API 없이 공식 데이터 제공</h3>
+                            <p class="note__body">Blizzard 공식 통계 API 없이도 owtics.gg가 매일 새로운 메타 데이터를 시각화할 수 있게 했습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="slide-caption">#14 - Overwatch Leaderboard Crawler · Reliability · Product Surface</p>
+        <div class="slide-frame" data-project="leaderboard">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Overwatch Leaderboard Crawler · 14 / 24</span>
+                    <span class="meta__right">reliability · gui config tool</span>
+                </div>
+
+                <h2 class="title">UI 변경 대응을 GUI 설정 툴로 풀었습니다.</h2>
+                <p class="subtitle">시즌 패치마다 인식 좌표가 바뀝니다. 코드 수정 대신 직접 만든 GUI 에디터로 영역을 다시 잡아, 27개월 동안 무중단으로 운영했습니다.</p>
+
+                <div class="surface">
+                    <div class="surface__main">
+                        <img src="assets/leaderboard/leaderboard-config.png" alt="Leaderboard CV config editor — GUI tool for adjusting recognition regions">
+                    </div>
+                    <div class="surface__notes">
+                        <div class="note">
+                            <div class="note__label">tool · gui editor</div>
+                            <h3 class="note__title">인식 영역 GUI 에디터</h3>
+                            <p class="note__body">leaderboard 화면 위에 인식 영역의 좌표·크기를 직접 지정하고 미리보기로 확인합니다. 역할·지역·시즌 별 설정을 분리해 저장합니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">workflow · no code</div>
+                            <h3 class="note__title">코드 수정 없이 좌표만 갱신</h3>
+                            <p class="note__body">UI가 바뀌어도 GUI에서 좌표를 다시 잡고 JSON으로 export하면 끝입니다. 인식 파이프라인 코드는 그대로 유지합니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">payoff · adapt fast</div>
+                            <h3 class="note__title">패치 대응 리소스 최소화</h3>
+                            <p class="note__body">UI 변경 대응 시간이 분 단위로 줄어 27개월 동안 패치에 무중단으로 대응했습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- =====================================================
+             #18 Leaderboard · Takeaway · Metric Proof
+             ===================================================== -->
+        <p class="slide-caption">#15 - Overwatch Leaderboard Crawler · Takeaway · Metric Proof</p>
+        <div class="slide-frame" data-project="leaderboard">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Overwatch Leaderboard Crawler · 15 / 24</span>
+                    <span class="meta__right">takeaway · 27 months</span>
+                </div>
+
+                <h2 class="title">공식 API 없이도 27개월간 매일 갱신했습니다.</h2>
+                <p class="subtitle">중요한 역량은 한 번 만든 스크립트가 아니라 지속적으로 운영하는 노하우입니다.</p>
+
+                <div class="diagram">
+                    <svg viewBox="0 0 1280 555" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+
+                        <!-- Tile 1 · 운영기간 -->
+                        <rect x="40" y="80" width="380" height="380" rx="8" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="60" y="116" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#F89E1A" font-weight="500" letter-spacing="0.08em">RUNTIME · 누적</text>
+                        <line x1="60" y1="132" x2="400" y2="132" stroke="#fff" stroke-width="1"/>
+                        <text x="60" y="248" font-family="'Inter', 'Pretendard', sans-serif" font-size="80" font-weight="700" fill="#fff">27</text>
+                        <text x="60" y="286" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="500" fill="#fff">개월 운영 자동화</text>
+                        <line x1="60" y1="380" x2="400" y2="380" stroke="#fff" stroke-width="1" stroke-dasharray="2,3"/>
+                        <text x="60" y="412" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">2023.10-2026.01 · 27개월 운영</text>
+                        <text x="60" y="432" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">시즌 패치·UI 변경 흡수</text>
+
+                        <!-- Tile 2 · 일 처리량 -->
+                        <rect x="450" y="80" width="380" height="380" rx="8" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="470" y="116" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#F89E1A" font-weight="500" letter-spacing="0.08em">DAILY · 캡처</text>
+                        <line x1="470" y1="132" x2="810" y2="132" stroke="#1A1A1A" stroke-width="1"/>
+                        <text x="470" y="248" font-family="'Inter', 'Pretendard', sans-serif" font-size="80" font-weight="700" fill="#1A1A1A">1,350</text>
+                        <text x="470" y="286" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="500" fill="#1A1A1A">PNG / 일</text>
+                        <line x1="470" y1="380" x2="810" y2="380" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="2,3"/>
+                        <text x="470" y="412" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">3 region × 3 role</text>
+                        <text x="470" y="432" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">≈ 4,500 명 / 일</text>
+
+                        <!-- Tile 3 · 외부 의존 -->
+                        <rect x="860" y="80" width="380" height="380" rx="8" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="880" y="116" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#F89E1A" font-weight="500" letter-spacing="0.08em">DEPENDENCY · 공식 API</text>
+                        <line x1="880" y1="132" x2="1220" y2="132" stroke="#1A1A1A" stroke-width="1"/>
+                        <text x="880" y="248" font-family="'Inter', 'Pretendard', sans-serif" font-size="80" font-weight="700" fill="#1A1A1A">0</text>
+                        <text x="880" y="286" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="500" fill="#1A1A1A">건 공식 API 의존</text>
+                        <line x1="880" y1="380" x2="1220" y2="380" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="2,3"/>
+                        <text x="880" y="412" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">Blizzard 공식 통계 API 없음</text>
+                        <text x="880" y="432" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">EC2 GUI 자동화 + CV 자체 처리</text>
+
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #18 Scrim Manager Section Cover
+             ===================================================== -->
+        <p class="slide-caption">#16 - Scrim Manager</p>
+        <div class="slide-frame" data-project="scrim-manager">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Scrim Manager · 16 / 24</span>
+                    <span class="meta__right">section opener · 2025 - 운영 중</span>
+                </div>
+
+                <div class="cover-section cover-section--narrative" style="--cover-color:#E94B6A;">
+                    <div class="cover-section__header">
+                        <div class="cover-section__color"></div>
+                        <p class="cover-section__period">2025 - 운영 중</p>
+                        <h1 class="cover-section__name">Scrim Manager</h1>
+                        <p class="cover-section__tagline">외부 팀과의 스크림 경기와 내전 경기를 한 도구로 묶은 풀스택 운영 도구.</p>
+                    </div>
+                    <div class="cover-section__narrative">
+                        <div class="narrative-row">
+                            <span class="narrative-row__label">PROBLEM</span>
+                            <p class="narrative-row__body">스크림 팀 운영진은 모든 팀원의 스케줄을 DM으로 수합하고, 경기가 잡힐 때마다 일일이 공지하고, 스케줄 미제출 팀원을 직접 재촉해야 했습니다. 팀원들은 본인의 활동 기록을 되짚어볼 채널이 없었습니다.</p>
+                        </div>
+                        <div class="narrative-row">
+                            <span class="narrative-row__label">SOLUTION</span>
+                            <p class="narrative-row__body">스케줄 수합부터 리마인드까지 전 워크플로우를 디스코드 봇 + 웹으로 구현하고, OCR로 결과 스크린샷에서 통계를 자동 추출합니다.</p>
+                        </div>
+                        <div class="narrative-row">
+                            <span class="narrative-row__label">IMPACT</span>
+                            <p class="narrative-row__body">운영진의 반복 작업이 사라졌고, 팀원들은 자신의 실력 변화를 숫자로 체감하며 POTM 선정으로 성취감을 얻습니다.</p>
+                        </div>
+                        <div class="narrative-row">
+                            <span class="narrative-row__label">OUTCOME</span>
+                            <p class="narrative-row__body">디스코드 서버 100여 명의 구성원 중 매주 평균 53명, 매달 평균 71명이 사용하여 53%의 정착률을 기록했습니다. 매주 외부 팀과의 스크림과 내전 운영을 지원하고 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #19 Scrim Manager · Problem · Before/After
+             ===================================================== -->
+        <p class="slide-caption">#17 - Scrim Manager · Problem · Before/After</p>
+        <div class="slide-frame" data-project="scrim">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Scrim Manager · 17 / 24</span>
+                    <span class="meta__right">problem · 운영 페인</span>
+                </div>
+
+                <h2 class="title">사람이 직접 보내던 수십 통의 디스코드 DM을 자동화했습니다.</h2>
+                <p class="subtitle">가능한 일정을 수집하고, 경기 일정을 공유하는 워크플로우가 수동 디스코드 DM에 의존했습니다. 웹 페이지와 봇 알림으로 운영진들의 수고를 줄였습니다.</p>
+
+                <div class="surface">
+                    <div class="surface__main">
+                        <img src="assets/scrim/latan-3.png" alt="Scrim Manager 전체 스케줄 보기-멤버 가용성 가시화">
+                    </div>
+                    <div class="surface__notes">
+                        <div class="note">
+                            <div class="note__label">before · 수동</div>
+                            <h3 class="note__title">반복 수동 DM</h3>
+                            <p class="note__body">멤버별로 가능한 시간을 매번 수동 DM으로 확인해야 했습니다. 운영진이 실수할 여지도 있었습니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">after · 자동</div>
+                            <h3 class="note__title">가용성 그리드</h3>
+                            <p class="note__body">요일과 시간대별로 누가 가능한지 한 화면에 표시합니다. 색상과 아이콘으로 역할 정보까지 같이 보입니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">payoff · 운영</div>
+                            <h3 class="note__title">빠르고 편리한 스케줄 등록</h3>
+                            <p class="note__body">DM으로 가능한 시간을 작성하는 대신, 드래그 몇 번이면 가능한 시간을 제출할 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #20 Scrim Manager · Web App · Product Surface
+             ===================================================== -->
+        <p class="slide-caption">#18 - Scrim Manager · Web App · Product Surface</p>
+        <div class="slide-frame" data-project="scrim">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Scrim Manager · 18 / 24</span>
+                    <span class="meta__right">web · 운영자 대시보드</span>
+                </div>
+
+                <h2 class="title">첫 화면에 핵심 상태를 모았습니다.</h2>
+                <p class="subtitle">주간 스케줄, 팀 라인업 진행률, 다가오는 외부·내전 경기, 빠른 작업을 한 화면에 배치했습니다.</p>
+
+                <div class="surface">
+                    <div class="surface__main">
+                        <img src="assets/scrim/latan-1-crop.png" alt="Scrim Manager 홈-주간 스케줄 현황">
+                    </div>
+                    <div class="surface__notes">
+                        <div class="note">
+                            <div class="note__label">widget · 1</div>
+                            <h3 class="note__title">주간 상태</h3>
+                            <p class="note__body">이번 주와 다음 주의 휴가 및 스케줄 등록 상태를 한 줄로 확인합니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">widget · 2</div>
+                            <h3 class="note__title">라인업 진행률</h3>
+                            <p class="note__body">팀별 가용성 입력 완료율을 표시합니다. 누가 아직 입력하지 않았는지 바로 확인합니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">widget · 3·4</div>
+                            <h3 class="note__title">빠른 작업</h3>
+                            <p class="note__body">예정된 외부 스크림과 내전, 내 스케줄, 전체 스케줄, 스크림 기록으로 바로 이동합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             Scrim Manager · Notifications · Pipeline Frame
+             ===================================================== -->
+        <p class="slide-caption">#19 - Scrim Manager · Notifications · Pipeline Frame</p>
+        <div class="slide-frame" data-project="scrim">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Scrim Manager · 19 / 24</span>
+                    <span class="meta__right">notifications · discord dm push</span>
+                </div>
+
+                <h2 class="title">공지사항을 유저에게 Discord DM으로 푸시합니다.</h2>
+                <p class="subtitle">스케줄 등록 요청부터 경기 생성, 수정, 취소, 참여 변경까지, 봇이 능동적으로 멤버에게 알립니다. 모든 DM에 1-click 웹 링크 버튼을 포함했습니다.</p>
+
+                <div class="diagram">
+                    <svg viewBox="0 0 1280 555" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <marker id="arr-notif" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+                                <path d="M0,0 L10,5 L0,10 z" fill="#1A1A1A"/>
+                            </marker>
+                        </defs>
+
+                        <!-- Discord DM mockup (left) -->
+                        <rect x="40" y="40" width="540" height="475" rx="10" fill="#313338" stroke="#26282c" stroke-width="1.5"/>
+                        <text x="62" y="74" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#E94B6A" letter-spacing="0.08em">DISCORD · DIRECT MESSAGE</text>
+                        <line x1="62" y1="88" x2="558" y2="88" stroke="#3f4248" stroke-width="1"/>
+
+                        <!-- Bot DM #1 — Schedule request -->
+                        <circle cx="86" cy="128" r="18" fill="#1D9CCB"/>
+                        <text x="86" y="134" text-anchor="middle" font-family="'Inter', 'Pretendard', sans-serif" font-size="13" font-weight="700" fill="#fff">B</text>
+                        <text x="118" y="124" font-family="'Inter', 'Pretendard', sans-serif" font-size="14" font-weight="600" fill="#fff">Scrim Bot</text>
+                        <rect x="186" y="112" width="36" height="16" rx="3" fill="#5865F2"/>
+                        <text x="204" y="124" text-anchor="middle" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="10" fill="#fff" font-weight="600">APP</text>
+                        <text x="232" y="124" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#9ea0a4">월요일 11:00</text>
+
+                        <rect x="118" y="138" width="420" height="115" rx="4" fill="#2b2d31" stroke="#F89E1A" stroke-width="3" stroke-linejoin="round"/>
+                        <rect x="118" y="138" width="4" height="115" fill="#F89E1A"/>
+                        <text x="140" y="166" font-family="'Inter', 'Pretendard', sans-serif" font-size="14" font-weight="700" fill="#fff">📅 스케줄 등록 요청</text>
+                        <text x="140" y="190" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#dbdde1">다음 주 스케줄을 등록해 주세요.</text>
+                        <text x="140" y="208" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#9ea0a4">가능한 시간을 선택하면 경기 일정 조율에</text>
+                        <text x="140" y="222" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#9ea0a4">활용됩니다.</text>
+                        <rect x="140" y="232" width="118" height="14" rx="3" fill="#4f545c"/>
+                        <text x="199" y="243" text-anchor="middle" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="10" fill="#fff" font-weight="600">스케줄 등록하기 ↗</text>
+
+                        <!-- Bot DM #2 — Match created -->
+                        <circle cx="86" cy="290" r="18" fill="#1D9CCB"/>
+                        <text x="86" y="296" text-anchor="middle" font-family="'Inter', 'Pretendard', sans-serif" font-size="13" font-weight="700" fill="#fff">B</text>
+                        <text x="118" y="286" font-family="'Inter', 'Pretendard', sans-serif" font-size="14" font-weight="600" fill="#fff">Scrim Bot</text>
+                        <rect x="186" y="274" width="36" height="16" rx="3" fill="#5865F2"/>
+                        <text x="204" y="286" text-anchor="middle" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="10" fill="#fff" font-weight="600">APP</text>
+                        <text x="232" y="286" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#9ea0a4">수요일 21:14</text>
+
+                        <rect x="118" y="300" width="420" height="185" rx="4" fill="#2b2d31" stroke="#F89E1A" stroke-width="3" stroke-linejoin="round"/>
+                        <rect x="118" y="300" width="4" height="185" fill="#F89E1A"/>
+                        <text x="140" y="328" font-family="'Inter', 'Pretendard', sans-serif" font-size="14" font-weight="700" fill="#fff">🎮 새 경기 등록</text>
+                        <text x="140" y="354" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#dbdde1" font-weight="600">vs External Team A</text>
+                        <text x="140" y="372" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#9ea0a4">📅 2025-05-22 (목)</text>
+                        <text x="140" y="388" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#9ea0a4">⏰ 22:00~23:30</text>
+                        <text x="140" y="404" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#9ea0a4">👑 주장: @플레이어 01</text>
+                        <text x="140" y="420" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#9ea0a4">🎯 상대 배틀태그: Team#1234</text>
+                        <rect x="140" y="436" width="118" height="14" rx="3" fill="#4f545c"/>
+                        <text x="199" y="447" text-anchor="middle" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="10" fill="#fff" font-weight="600">경기 상세 보기 ↗</text>
+                        <text x="140" y="472" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="10" fill="#9ea0a4">LATAN'S FINAL WEAPON</text>
+
+                        <!-- Notification catalog (right) -->
+                        <rect x="640" y="40" width="600" height="475" rx="6" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="660" y="74" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#E94B6A" font-weight="500" letter-spacing="0.08em">DM CATALOG · 9 EVENT TYPES</text>
+                        <line x1="660" y1="88" x2="1220" y2="88" stroke="#1A1A1A" stroke-width="1"/>
+
+                        <text x="660" y="124" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#1A1A1A">📅</text>
+                        <text x="694" y="124" font-family="'Inter', 'Pretendard', sans-serif" font-size="14" font-weight="600" fill="#1A1A1A">스케줄 등록 요청</text>
+                        <text x="694" y="142" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#7B7B7B">매주 미등록자 자동 push</text>
+
+                        <text x="660" y="174" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#1A1A1A">✅</text>
+                        <text x="694" y="174" font-family="'Inter', 'Pretendard', sans-serif" font-size="14" font-weight="600" fill="#1A1A1A">스케줄 등록 완료</text>
+                        <text x="694" y="192" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#7B7B7B">제출 확인 + 수정 링크</text>
+
+                        <text x="660" y="224" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#1A1A1A">🎮</text>
+                        <text x="694" y="224" font-family="'Inter', 'Pretendard', sans-serif" font-size="14" font-weight="600" fill="#1A1A1A">새 경기 등록</text>
+                        <text x="694" y="242" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#7B7B7B">참여자 전원 + 주장 + 상대</text>
+
+                        <text x="660" y="274" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#1A1A1A">📝</text>
+                        <text x="694" y="274" font-family="'Inter', 'Pretendard', sans-serif" font-size="14" font-weight="600" fill="#1A1A1A">경기 일정 수정</text>
+                        <text x="694" y="292" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#7B7B7B">변경 시 참여자 일괄 알림</text>
+
+                        <text x="660" y="324" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#1A1A1A">➕</text>
+                        <text x="694" y="324" font-family="'Inter', 'Pretendard', sans-serif" font-size="14" font-weight="600" fill="#1A1A1A">경기 참여 등록 / 취소</text>
+                        <text x="694" y="342" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#7B7B7B">추가·제외된 멤버에게만</text>
+
+                        <text x="660" y="374" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#1A1A1A">❌</text>
+                        <text x="694" y="374" font-family="'Inter', 'Pretendard', sans-serif" font-size="14" font-weight="600" fill="#1A1A1A">경기 취소 / 삭제</text>
+                        <text x="694" y="392" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#7B7B7B">참여자 전원에게 사유 포함</text>
+
+                        <text x="660" y="424" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#1A1A1A">🔔</text>
+                        <text x="694" y="424" font-family="'Inter', 'Pretendard', sans-serif" font-size="14" font-weight="600" fill="#1A1A1A">경기 리마인드 (D-1)</text>
+                        <text x="694" y="442" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#7B7B7B">백그라운드 태스크가 push</text>
+
+                        <line x1="660" y1="466" x2="1220" y2="466" stroke="#e0e0e0" stroke-width="1"/>
+                        <text x="660" y="488" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#7B7B7B">모든 DM에 1-click 웹 링크 버튼 포함</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #22 Scrim Manager · Vision OCR · Product Surface
+             ===================================================== -->
+        <p class="slide-caption">#20 - Scrim Manager · Vision OCR · Product Surface</p>
+        <div class="slide-frame" data-project="scrim">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Scrim Manager · 20 / 24</span>
+                    <span class="meta__right">vision · screenshot → 12 rows</span>
+                </div>
+
+                <h2 class="title">스크린샷만 올리면 경기 기록을 자동으로 작성합니다.</h2>
+                <p class="subtitle">인게임 스코어보드를 Qwen3-VL으로 인식하여 구조화했습니다.</p>
+
+                <div class="surface">
+                    <div class="surface__main">
+                        <img src="assets/scrim/latan-2-stats.png" alt="Scrim Manager 매치 상세-영웅 선택 + 12행 스탯 테이블">
+                    </div>
+                    <div class="surface__notes">
+                        <div class="note">
+                            <div class="note__label">input</div>
+                            <h3 class="note__title">스크린샷 업로드</h3>
+                            <p class="note__body">5v5 매치 종료 화면을 업로드합니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">engine · bedrock converse</div>
+                            <h3 class="note__title">Qwen3-VL 호출</h3>
+                            <p class="note__body">닉네임 및 통계를 읽습니다. 높은 성능으로 안정적인 인식률을 보여줍니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">output</div>
+                            <h3 class="note__title">데이터 구조화</h3>
+                            <p class="note__body">영웅, K/D/A, 대미지, 치유, 경감을 인식하여 구조화합니다. SQLite에 저장해 다음 단계의 POTM 선정과 통계 UI를 렌더링합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             Scrim Manager · POTM · Product Surface
+             ===================================================== -->
+        <p class="slide-caption">#21 - Scrim Manager · POTM · Product Surface</p>
+        <div class="slide-frame" data-project="scrim">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Scrim Manager · 21 / 24</span>
+                    <span class="meta__right">potm · weighted sum + 내전/외부 분기</span>
+                </div>
+
+                <h2 class="title">매치마다 Player-of-the-Match를 자동 선정합니다.</h2>
+                <p class="subtitle">OCR로 들어온 스탯을 역할별 가중합으로 변환하고, 참여율 필터를 적용한 뒤 1위 플레이어를 선정합니다.</p>
+
+                <div class="surface">
+                    <div class="surface__main">
+                        <img src="assets/scrim/potm-panel.png" alt="Play-of-the-Match panel · game detail page">
+                    </div>
+                    <div class="surface__notes">
+                        <div class="note">
+                            <div class="note__label">algorithm · weighted sum</div>
+                            <h3 class="note__title">역할별 가중치</h3>
+                            <p class="note__body">탱커(킬·데스·대미지·경감) / 딜러(대미지·킬·데스·어시스트) / 힐러(치유·데스·대미지·어시스트·킬). Min-max 정규화 후 가중합으로 POTM 점수를 계산합니다.</p>
+                        </div>
+                        <hr>
+                        <div class="note">
+                            <div class="note__label">filter · participation</div>
+                            <h3 class="note__title">참여율 필터</h3>
+                            <p class="note__body">표본이 적어 과대평가될 수 있는 플레이어는 제외합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #25 Scrim Manager · Adoption · Metric Proof
+             ===================================================== -->
+        <p class="slide-caption">#22 - Scrim Manager · Adoption · Metric Proof</p>
+        <div class="slide-frame" data-project="scrim">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Scrim Manager · 22 / 24</span>
+                    <span class="meta__right">adoption · live community</span>
+                </div>
+
+                <h2 class="title">100명 이상 중 53명의 회원이 매주 사용합니다.</h2>
+                <p class="subtitle">디스코드 스크림 팀 회원은 100명 이상이고, 그 중 매주 스크림에 참여하는 회원은 53명입니다.</p>
+
+                <div class="diagram">
+                    <svg viewBox="0 0 1280 555" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+
+                        <!-- Tile 1 · 등록 -->
+                        <rect x="40" y="80" width="380" height="380" rx="8" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="60" y="116" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#E94B6A" font-weight="500" letter-spacing="0.08em">BASE · 등록</text>
+                        <line x1="60" y1="132" x2="400" y2="132" stroke="#1A1A1A" stroke-width="1"/>
+                        <text x="60" y="248" font-family="'Inter', 'Pretendard', sans-serif" font-size="80" font-weight="700" fill="#1A1A1A">100+</text>
+                        <text x="60" y="286" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="500" fill="#1A1A1A">등록 플레이어</text>
+                        <line x1="60" y1="380" x2="400" y2="380" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="2,3"/>
+                        <text x="60" y="412" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">Discord OAuth 연동</text>
+                        <text x="60" y="432" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">실명 없이 게임 아이디로</text>
+
+                        <!-- Tile 2 · WAU -->
+                        <rect x="450" y="80" width="380" height="380" rx="8" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="470" y="116" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#E94B6A" font-weight="500" letter-spacing="0.08em">WEEKLY · WAU</text>
+                        <line x1="470" y1="132" x2="810" y2="132" stroke="#fff" stroke-width="1"/>
+                        <text x="470" y="248" font-family="'Inter', 'Pretendard', sans-serif" font-size="80" font-weight="700" fill="#fff">53</text>
+                        <text x="470" y="286" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="500" fill="#fff">주간 활성 사용자</text>
+                        <line x1="470" y1="380" x2="810" y2="380" stroke="#fff" stroke-width="1" stroke-dasharray="2,3"/>
+                        <text x="470" y="412" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">등록자 절반 이상이 매주</text>
+                        <text x="470" y="432" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">실제 내전·집계에 참여</text>
+
+                        <!-- Tile 3 · MAU -->
+                        <rect x="860" y="80" width="380" height="380" rx="8" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="880" y="116" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#E94B6A" font-weight="500" letter-spacing="0.08em">MONTHLY · MAU</text>
+                        <line x1="880" y1="132" x2="1220" y2="132" stroke="#1A1A1A" stroke-width="1"/>
+                        <text x="880" y="248" font-family="'Inter', 'Pretendard', sans-serif" font-size="80" font-weight="700" fill="#1A1A1A">71</text>
+                        <text x="880" y="286" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="500" fill="#1A1A1A">월간 활성 사용자</text>
+                        <line x1="880" y1="380" x2="1220" y2="380" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="2,3"/>
+                        <text x="880" y="412" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">신규 + 복귀 포함</text>
+                        <text x="880" y="432" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">시즌·이벤트 영향</text>
+
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #26 Scrim Manager · Operations · System Diagram
+             ===================================================== -->
+        <p class="slide-caption">#23 - Scrim Manager · Operations · System Diagram</p>
+        <div class="slide-frame" data-project="scrim">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">Scrim Manager · 23 / 24</span>
+                    <span class="meta__right">operations · full stack</span>
+                </div>
+
+                <h2 class="title">단일 프로세스가 웹, 봇, OCR을 함께 운영합니다.</h2>
+                <p class="subtitle">서비스 분리보다 배포 단순성, 비용, 개발 공수, 장애 지점 축소가 중요했습니다.</p>
+
+                <div class="diagram">
+                    <svg viewBox="0 0 1280 555" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <marker id="arr26" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+                                <path d="M0,0 L10,5 L0,10 z" fill="#1A1A1A"/>
+                            </marker>
+                            <marker id="arr26d" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+                                <path d="M0,0 L10,5 L0,10 z" fill="#7B7B7B"/>
+                            </marker>
+                        </defs>
+
+                        <!-- EC2 host -->
+                        <rect x="200" y="70" width="660" height="440" rx="8" fill="none" stroke="#bcbfc4" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <text x="220" y="92" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#7B7B7B" letter-spacing="0.12em">EC2 HOST</text>
+
+                        <!-- Browser -->
+                        <rect x="40" y="240" width="130" height="80" rx="6" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="56" y="266" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#E94B6A" font-weight="500" letter-spacing="0.08em">CLIENT</text>
+                        <text x="56" y="296" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="700" fill="#1A1A1A">Browser</text>
+
+                        <path d="M 170 280 L 240 280" fill="none" stroke="#1A1A1A" stroke-width="2" marker-end="url(#arr26)"/>
+                        <text x="200" y="272" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="10" fill="#1A1A1A" text-anchor="middle">HTTPS</text>
+
+                        <!-- Caddy -->
+                        <rect x="240" y="240" width="160" height="80" rx="6" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="258" y="266" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#E94B6A" font-weight="500" letter-spacing="0.08em">PROXY</text>
+                        <text x="258" y="296" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="700" fill="#1A1A1A">Caddy</text>
+
+                        <path d="M 400 280 L 460 280" fill="none" stroke="#1A1A1A" stroke-width="2" marker-end="url(#arr26)"/>
+
+                        <!-- FastAPI process -->
+                        <rect x="460" y="140" width="380" height="330" rx="6" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="480" y="170" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#E94B6A" font-weight="500" letter-spacing="0.08em">PROCESS · uvicorn · async</text>
+                        <text x="480" y="200" font-family="'Inter', 'Pretendard', sans-serif" font-size="22" font-weight="700" fill="#fff">FastAPI</text>
+
+                        <!-- Sub: Web Routes -->
+                        <rect x="478" y="230" width="345" height="100" rx="4" fill="#2a2a2a" stroke="#444"/>
+                        <text x="494" y="252" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" letter-spacing="0.05em">WEB</text>
+                        <text x="494" y="288" font-family="'Inter', 'Pretendard', sans-serif" font-size="18" font-weight="700" fill="#fff">Routes · Jinja2</text>
+                        <text x="494" y="312" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="rgba(255,255,255,0.55)">18 routers · session auth</text>
+
+                        <!-- Sub: Discord Bot -->
+                        <rect x="478" y="345" width="345" height="100" rx="4" fill="#2a2a2a" stroke="#444"/>
+                        <text x="494" y="367" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" letter-spacing="0.05em">ASYNCIO TASK</text>
+                        <text x="494" y="403" font-family="'Inter', 'Pretendard', sans-serif" font-size="18" font-weight="700" fill="#fff">Discord Bot</text>
+                        <text x="494" y="427" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="rgba(255,255,255,0.78)">웹 요청 없이 실시간 DM</text>
+
+                        <!-- SQLite -->
+                        <rect x="900" y="160" width="220" height="80" rx="6" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="920" y="186" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#E94B6A" font-weight="500" letter-spacing="0.08em">VOLUME</text>
+                        <text x="920" y="216" font-family="'Inter', 'Pretendard', sans-serif" font-size="22" font-weight="700" fill="#1A1A1A">SQLite</text>
+
+                        <!-- Bedrock -->
+                        <rect x="900" y="270" width="220" height="80" rx="6" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="920" y="296" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#E94B6A" font-weight="500" letter-spacing="0.08em">AWS BEDROCK</text>
+                        <text x="920" y="326" font-family="'Inter', 'Pretendard', sans-serif" font-size="22" font-weight="700" fill="#1A1A1A">Qwen3 VL</text>
+
+                        <!-- Discord -->
+                        <rect x="900" y="380" width="220" height="80" rx="6" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <text x="920" y="406" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#E94B6A" font-weight="500" letter-spacing="0.08em">DISCORD</text>
+                        <text x="920" y="436" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="700" fill="#1A1A1A">Gateway · OAuth</text>
+
+                        <!-- Arrows -->
+                        <path d="M 840 200 L 900 200" fill="none" stroke="#1A1A1A" stroke-width="2" marker-end="url(#arr26)"/>
+                        <text x="870" y="193" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="10" fill="#1A1A1A" text-anchor="middle">aiosqlite</text>
+
+                        <path d="M 840 310 L 900 310" fill="none" stroke="#1A1A1A" stroke-width="2" marker-end="url(#arr26)"/>
+                        <text x="870" y="303" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="10" fill="#1A1A1A" text-anchor="middle">boto3</text>
+
+                        <path d="M 840 420 L 900 420" fill="none" stroke="#1A1A1A" stroke-width="2" marker-end="url(#arr26)"/>
+                        <text x="870" y="413" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="10" fill="#1A1A1A" text-anchor="middle">wss</text>
+
+                        <!-- OAuth dashed -->
+                        <path d="M 105 240 L 105 110 L 1010 110 L 1010 380" fill="none" stroke="#7B7B7B" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr26d)"/>
+                        <text x="557" y="102" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="10" fill="#7B7B7B" text-anchor="middle">OAuth identify</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             #27 Closing · Metric Proof
+             ===================================================== -->
+        <p class="slide-caption">#24 - Closing · Metric Proof</p>
+        <div class="slide-frame">
+            <div class="slide">
+                <div class="meta">
+                    <span class="meta__left">DECK · 24 / 24</span>
+                    <span class="meta__right">closing · 3 evidence</span>
+                </div>
+
+                <h2 class="title">수집부터 자동화, 지속 운영까지 수행했습니다.</h2>
+                <p class="subtitle">세 프로젝트는 서로 다른 도메인이지만 같은 역량을 증명합니다. 데이터를 구조화하고, 비용과 안정성을 고려해 연 단위로 운영할 수 있습니다.</p>
+
+                <div class="diagram">
+                    <svg viewBox="0 0 1280 555" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+
+                        <!-- Lumiere · Scale -->
+                        <rect x="40" y="40" width="380" height="475" rx="8" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <rect x="40" y="40" width="380" height="10" fill="#1D9CCB"/>
+                        <text x="60" y="92" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#1D9CCB" font-weight="500" letter-spacing="0.08em">LUMIERE · SCALE</text>
+                        <text x="60" y="218" font-family="'Inter', 'Pretendard', sans-serif" font-size="72" font-weight="700" fill="#1A1A1A">100,000+</text>
+                        <text x="60" y="258" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="500" fill="#1A1A1A">학생 가입자</text>
+                        <line x1="60" y1="306" x2="400" y2="306" stroke="#e0e0e0" stroke-width="1"/>
+                        <text x="60" y="346" font-family="'Inter', 'Pretendard', sans-serif" font-size="18" font-weight="600" fill="#1A1A1A">150,000+</text>
+                        <text x="60" y="370" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">PDF 보고서 출력</text>
+                        <text x="60" y="408" font-family="'Inter', 'Pretendard', sans-serif" font-size="18" font-weight="600" fill="#1A1A1A">3개년</text>
+                        <text x="60" y="432" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">운영</text>
+                        <text x="60" y="478" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#1D9CCB">2017-2020 정시 시즌</text>
+
+                        <!-- Leaderboard · Automation -->
+                        <rect x="450" y="40" width="380" height="475" rx="8" fill="#fff" stroke="#1A1A1A" stroke-width="2"/>
+                        <rect x="450" y="40" width="380" height="10" fill="#F89E1A"/>
+                        <text x="470" y="92" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#F89E1A" font-weight="500" letter-spacing="0.08em">LEADERBOARD · AUTOMATION</text>
+                        <text x="470" y="218" font-family="'Inter', 'Pretendard', sans-serif" font-size="72" font-weight="700" fill="#1A1A1A">27</text>
+                        <text x="470" y="258" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="500" fill="#1A1A1A">개월 운영</text>
+                        <line x1="470" y1="306" x2="810" y2="306" stroke="#e0e0e0" stroke-width="1"/>
+                        <text x="470" y="346" font-family="'Inter', 'Pretendard', sans-serif" font-size="18" font-weight="600" fill="#1A1A1A">1,350+</text>
+                        <text x="470" y="370" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">PNG / 일 자동 수집</text>
+                        <text x="470" y="408" font-family="'Inter', 'Pretendard', sans-serif" font-size="18" font-weight="600" fill="#1A1A1A">4,500</text>
+                        <text x="470" y="432" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="#7B7B7B">플레이어 / 일 분석</text>
+                        <text x="470" y="478" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#F89E1A">2023.10 - 2026.01</text>
+
+                        <!-- Scrim · Adoption -->
+                        <rect x="860" y="40" width="380" height="475" rx="8" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="2"/>
+                        <rect x="860" y="40" width="380" height="10" fill="#E94B6A"/>
+                        <text x="880" y="92" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="13" fill="#E94B6A" font-weight="500" letter-spacing="0.08em">SCRIM · ADOPTION</text>
+                        <text x="880" y="218" font-family="'Inter', 'Pretendard', sans-serif" font-size="72" font-weight="700" fill="#fff">100+</text>
+                        <text x="880" y="258" font-family="'Inter', 'Pretendard', sans-serif" font-size="20" font-weight="500" fill="#fff">등록 플레이어</text>
+                        <line x1="880" y1="306" x2="1220" y2="306" stroke="#444" stroke-width="1"/>
+                        <text x="880" y="346" font-family="'Inter', 'Pretendard', sans-serif" font-size="18" font-weight="600" fill="#fff">53 · 71</text>
+                        <text x="880" y="370" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">WAU · MAU</text>
+                        <text x="880" y="408" font-family="'Inter', 'Pretendard', sans-serif" font-size="18" font-weight="600" fill="#fff">매주</text>
+                        <text x="880" y="432" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">외부 스크림과 내전 운영</text>
+                        <text x="880" y="478" font-family="'IBM Plex Mono', 'Pretendard', sans-serif" font-size="11" fill="#E94B6A">2025 - 운영 중</text>
+
+                    </svg>
+                </div>
+
+                <p class="caption">
+                    <span><strong>SHIN INSIK · p0rygon.github.io · 2026.05</strong></span>
+                    <span>contact: gms04246@gmail.com</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
